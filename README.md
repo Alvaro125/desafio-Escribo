@@ -16,7 +16,7 @@ Pode inserir o número por terminal
 ```bash
 $ node desafio_em_javascript.js
 ```
-
+Ou pode testar direto pelo html [clique Aqui](https://alvaro125.github.io/desafio-Escribo/)
 > ### dart
 Pode inserir o número por terminal
 ```bash
