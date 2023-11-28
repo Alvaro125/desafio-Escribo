@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio Técnico</title>
+  </head>
+  <body>
+    <p>
+      <input type="number" id="entrada" min="0" value="1"/>
+      <button onclick="Calcular()">Calcular</button>
+    </p>
+    <p id="resultado"></p>
+    <script>
+      let entrada = document.getElementById("entrada");
+      let resultado = document.getElementById("resultado");
+      function Somatorio(numero_entrada) {
+        try {
+          let lista = [];
+          let total = 0;
+          if (numero_entrada < 0) throw new Error("Numero deve ser positivo");
+          for (let numero = 1; numero < numero_entrada; numero++) {
+            if (!(numero % 3) || !(numero % 5)) {
+              lista.push(numero);
+              total += numero;
+            }
+          }
+          return [lista.join(" + "), total];
+        } catch (err) {
+          console.error(err);
+        }
+      }
+      function Calcular() {
+        resultado.innerText = ``;
+        const [soma, total] = Somatorio(entrada.value);
+        resultado.innerText = `${soma} = ${total}`;
+      }
+    </script>
+  </body>
+</html>
